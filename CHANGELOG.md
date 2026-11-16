@@ -10,6 +10,8 @@ The ShapeMap report the grammar is generated from is recorded in `package.json` 
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-16
+
 ### Added
 
 - `codemirror-lang-shapemap`: a CodeMirror 6 language (Lezer parser) for ShapeMap, generated
