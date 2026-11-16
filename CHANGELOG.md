@@ -10,6 +10,12 @@ The ShapeMap report the grammar is generated from is recorded in `package.json` 
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-16
+
+## Changed
+
+- No changes
+
 ## [0.1.0] - 2026-11-16
 
 ### Added
