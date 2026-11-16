@@ -1,0 +1,71 @@
+# Trailing comma (the specification's Example 2)
+
+<n>@<S>,
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),⚠)
+
+# Empty map
+
+
+
+==>
+
+ShapeMap(⚠)
+
+# Missing shape label
+
+<n>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),⚠))
+
+# Missing comma
+
+<n1>@<S> <n2>@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),⚠,ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))))
+
+# Status and reason, which the grammar does not have
+
+<n>@!<S>, <n>@<S>/"why"
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(⚠,Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),⚠,⚠(StringLiteral2))
+
+# Blank node as node selector
+
+_:b@<S>
+
+==>
+
+ShapeMap(⚠(BlankNodeLabel),ShapeAssociation(NodeSelector(Iri(⚠)),ShapeLabel(Iri(Iriref))))
+
+# Unclosed triple pattern
+
+{FOCUS <p> _ @<S>, <n>@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(Iri(Iriref)),_,⚠)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))))
+
+# Lower-case keywords
+
+{focus <p> _}@start
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",⚠,Iri(Iriref),⚠(_),⚠("}"))),ShapeLabel(⚠,⚠(RdfType))))
+
+# Block comment
+
+<n>@<S> /* c */
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),⚠,⚠,⚠)

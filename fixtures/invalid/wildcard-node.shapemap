@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: `_` outside a triplePattern; only triplePattern [6] has the wildcard.
+# shex.js: rejects
+_@<http://schema.example/S>

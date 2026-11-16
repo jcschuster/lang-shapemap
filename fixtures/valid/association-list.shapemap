@@ -1,0 +1,18 @@
+# Hand-written. A shapeMap [1] of several shapeAssociations [2], and the PASSED TOKENS:
+# whitespace (space, tab, CR LF) and comments between every two terminals; `#` inside an
+# IRI or a string starts no comment. Ends in a comment without a newline.
+<http://data.example/#n1>@<http://schema.example/#S>,<http://data.example/n2>@<http://schema.example/S>,
+	<http://data.example/n3>	@	<http://schema.example/S>	,
+<http://data.example/n4> # comment
+@ # comment
+<http://schema.example/S> # comment
+, # comment
+"#not a comment" @ START # comment
+,
+{ # comment
+FOCUS # comment
+<http://schema.example/p> # comment
+_ # comment
+} # comment
+@START
+# comment

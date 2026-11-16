@@ -1,0 +1,31 @@
+# a as predicate (deviation D1), Example 3 of the specification
+
+{FOCUS a <http://schema.example/Some/Type>}@START
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(RdfType),Iri(Iriref),"}")),ShapeLabel(AtStart)))
+
+# a as predicate with the wildcard or FOCUS as object
+
+{FOCUS a _}@<S>, {_ a FOCUS}@<S>, {<s> a FOCUS}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(RdfType),_,"}")),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(TriplePattern("{",_,Predicate(RdfType),FOCUS,"}")),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(TriplePattern("{",Iri(Iriref),Predicate(RdfType),FOCUS,"}")),ShapeLabel(Iri(Iriref))))
+
+# a is no longer a subject term (deviation D1)
+
+a@<S>
+
+==>
+
+ShapeMap(⚠(RdfType),ShapeAssociation(NodeSelector(Iri(⚠)),ShapeLabel(Iri(Iriref))))
+
+# a as the object of a triple pattern is an error
+
+{FOCUS <p> a}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(Iri(Iriref)),⚠(RdfType),⚠,"}")),ShapeLabel(Iri(Iriref))))

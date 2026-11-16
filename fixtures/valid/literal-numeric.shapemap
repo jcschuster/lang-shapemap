@@ -1,0 +1,17 @@
+# Hand-written. numericLiteral [16t]: INTEGER [19t], DECIMAL [20t] and DOUBLE [21t] with
+# EXPONENT [155s], signed and unsigned, with and without digits around the point.
+0@<http://schema.example/S>,
+42@<http://schema.example/S>,
++1@<http://schema.example/S>,
+-1@<http://schema.example/S>,
+1.5@<http://schema.example/S>,
+.5@<http://schema.example/S>,
+-.5@<http://schema.example/S>,
++0.0@<http://schema.example/S>,
+1e3@<http://schema.example/S>,
+1E3@<http://schema.example/S>,
+1.5e+3@<http://schema.example/S>,
+1.e-3@<http://schema.example/S>,
+.5e3@<http://schema.example/S>,
+-1e3@<http://schema.example/S>,
++1.0E0@START

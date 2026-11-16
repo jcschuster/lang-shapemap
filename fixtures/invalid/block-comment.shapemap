@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: `/* */` comments; the PASSED TOKENS are whitespace and `#` comments only.
+# shex.js: accepts
+<http://data.example/n>@<http://schema.example/S> /* comment */

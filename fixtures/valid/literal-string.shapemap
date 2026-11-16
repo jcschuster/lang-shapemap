@@ -1,0 +1,23 @@
+# Hand-written. rdfLiteral [65x] as string [135s], plain and with a datatype ("^^" iri), in
+# all four forms STRING_LITERAL1/2 [156s]-[157s] and STRING_LITERAL_LONG1/2 [158s]-[159s],
+# empty, with every ECHAR [160s] and both UCHAR [26t] lengths.
+'single'@<http://schema.example/S>,
+"double"@<http://schema.example/S>,
+'''long
+single with ' and '' and """'''@<http://schema.example/S>,
+"""long
+double with " and "" and '''"""@<http://schema.example/S>,
+''@<http://schema.example/S>,
+""@<http://schema.example/S>,
+''''''@<http://schema.example/S>,
+""""""@<http://schema.example/S>,
+'\t\b\n\r\f\"\'\\'@<http://schema.example/S>,
+"\t\b\n\r\f\"\'\\"@<http://schema.example/S>,
+'''\t\b\n\r\f\"\'\\'''@<http://schema.example/S>,
+"""\t\b\n\r\f\"\'\\"""@<http://schema.example/S>,
+"\u00E9\U0001F600"@<http://schema.example/S>,
+"typed"^^<http://www.w3.org/2001/XMLSchema#string>@<http://schema.example/S>,
+'typed'^^<http://www.w3.org/2001/XMLSchema#string>@<http://schema.example/S>,
+'''typed'''^^<http://www.w3.org/2001/XMLSchema#string>@<http://schema.example/S>,
+"""typed"""^^<http://www.w3.org/2001/XMLSchema#string>@<http://schema.example/S>,
+"spaced" ^^ <http://www.w3.org/2001/XMLSchema#string> @ <http://schema.example/S>

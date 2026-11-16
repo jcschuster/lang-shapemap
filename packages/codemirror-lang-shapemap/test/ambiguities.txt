@@ -1,0 +1,119 @@
+# FOCUS:x is a prefixed name; shex.js rejects it
+
+FOCUS:x@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))))
+
+# FOCUS:p is a prefixed name, so a triple pattern of two terms is an error; shex.js accepts it
+
+{FOCUS:p <o>}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",Iri(PrefixedName(PnameLn)),Predicate(Iri(Iriref)),⚠,"}")),ShapeLabel(Iri(Iriref))))
+
+# FOCUS: is a prefix, the subject of a triple pattern; shex.js rejects it
+
+{FOCUS: <p> FOCUS}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",Iri(PrefixedName(PnameNs)),Predicate(Iri(Iriref)),FOCUS,"}")),ShapeLabel(Iri(Iriref))))
+
+# START:x after @ and a space is a prefixed name; shex.js rejects it
+
+<n>@ START:x
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(PrefixedName(PnameLn)))))
+
+# @START: is an ATPNAME_NS; shex.js rejects it
+
+<n>@START:
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(AtpnameNs)))
+
+# @START:x is an ATPNAME_LN; shex.js rejects it
+
+<n>@START:x
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(AtpnameLn)))
+
+# "chat"@START is a string with the language tag START and no shape label; shex.js accepts it
+
+"chat"@START
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(RdfLiteral(LangString(LangStringLiteral2))),⚠))
+
+# "chat"@ex:S is a string with the language tag ex and then a prefixed name; shex.js accepts it
+
+"chat"@ex:S, 'chat'@ex:S, """chat"""@ex:S
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(RdfLiteral(LangString(LangStringLiteral2))),ShapeLabel(⚠,Iri(PrefixedName(PnameLn)))),ShapeAssociation(NodeSelector(RdfLiteral(LangString(LangStringLiteral1))),ShapeLabel(⚠,Iri(PrefixedName(PnameLn)))),ShapeAssociation(NodeSelector(RdfLiteral(LangString(LangStringLiteralLong2))),ShapeLabel(⚠,Iri(PrefixedName(PnameLn)))))
+
+# A space before or after the @ makes START the shape label; shex.js accepts it
+
+"chat" @START, "chat"@ START
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral2))),ShapeLabel(AtStart)),ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral2))),ShapeLabel(START)))
+
+# EX:n is a prefixed name; shex.js rejects it
+
+EX:n@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))))
+
+# EX:S after @ and a space is a prefixed name; shex.js rejects it
+
+<n>@ EX:S
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(PrefixedName(PnameLn)))))
+
+# FOCUSED:x is a prefixed name; shex.js rejects it
+
+FOCUSED:x@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))))
+
+# a_ is the predicate a and the wildcard; shex.js rejects it
+
+{FOCUS a_}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(RdfType),_,"}")),ShapeLabel(Iri(Iriref))))
+
+# _:b is a BLANK_NODE_LABEL, which no production takes; shex.js rejects it
+
+{_:b FOCUS}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",⚠(BlankNodeLabel),FOCUS,⚠("}"))),ShapeLabel(Iri(Iriref))))
+
+# The wildcard and a predicate; shex.js accepts it
+
+{_ <p> FOCUS}@<S>, {_ :p FOCUS}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",_,Predicate(Iri(Iriref)),FOCUS,"}")),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(TriplePattern("{",_,Predicate(Iri(PrefixedName(PnameLn))),FOCUS,"}")),ShapeLabel(Iri(Iriref))))

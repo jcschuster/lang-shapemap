@@ -1,0 +1,4 @@
+# rudof examples/shex/issues/issue645.sm, commit 5e361daf3f7d30b31f0d545a179a67976f95541b.
+# Copyright (c) 2023 Jose Emilio Labra Gayo; used under the MIT licence, see fixtures/rudof-LICENSE-MIT.
+:ACME@:Company,
+:BAD@:Company

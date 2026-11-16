@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: FOCUS as both subject and object of a triplePattern [6].
+# shex.js: rejects
+{FOCUS <http://schema.example/p> FOCUS}@<http://schema.example/S>

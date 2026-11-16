@@ -1,0 +1,39 @@
+# IRIREF with UCHAR escapes and non-ASCII characters
+
+<>@<#S>, <http://例え.jp/ü\u00E9\U0001F600>@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))))
+
+# Prefixed names (deviation D2)
+
+ex:n@<S>, :n@<S>, ex:@<S>, :@<S>, ex.a-1:n@<S>, ex:1n@<S>, ex::n@<S>, ex:a.b@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameNs))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameNs))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))))
+
+# PERCENT and PN_LOCAL_ESC in local names
+
+ex:a%20b@<S>, ex:\~\.\-\!\$\&\'\(\)\*\+\,\;\=\/\?\#\@\%\_@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))))
+
+# Non-ASCII prefixed names
+
+é:ü@<S>, ex:日本@<S>, ex:a·b̀‿c@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))))
+
+# Prefixed names that start like a keyword
+
+a:b@<S>, true:x@<S>, false:x@<S>, START:x@<S>, {FOCUS:x <p> FOCUS}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(TriplePattern("{",Iri(PrefixedName(PnameLn)),Predicate(Iri(Iriref)),FOCUS,"}")),ShapeLabel(Iri(Iriref))))

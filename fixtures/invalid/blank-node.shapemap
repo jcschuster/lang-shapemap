@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: a blank node as node selector; BLANK_NODE_LABEL [142s] is defined but no 2017 production uses it.
+# shex.js: accepts
+_:b1@<http://schema.example/S>

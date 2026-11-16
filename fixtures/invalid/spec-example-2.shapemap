@@ -1,0 +1,7 @@
+# ShapeMap Structure and Language, Draft Community Group Report 13 July 2017,
+# https://shex.io/shape-map/ (sha256 1592134306e2c53e2fd5d6edb8af328c39006a78db8a0427227dd9f251704437),
+# section 5, Example 2, transcribed. Spec example.
+# invalid: the trailing comma; shapeMap [1] separates associations by commas.
+# shex.js: accepts
+# a simple nodeSelector/shapeLabel pair
+<http://data.example/#n1> @ <http://data.example/#S2>,

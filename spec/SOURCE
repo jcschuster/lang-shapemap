@@ -1,0 +1,10 @@
+title:    ShapeMap Structure and Language
+status:   Draft Community Group Report, 13 July 2017 (W3C Shape Expressions Community Group)
+editors:  Eric Prud'hommeaux, Thomas Baker
+url:      https://shex.io/shape-map/
+dated:    https://shex.io/shape-map-20170713/ (byte-identical on the fetch date)
+sha256:   1592134306e2c53e2fd5d6edb8af328c39006a78db8a0427227dd9f251704437
+source:   shexSpec/shape-map f0ffcb7a5fd1a164ce90959c1025c6118b8751be (2017-07-04, the grammar as published)
+fetched:  2026-11-16
+section:  grammar
+grammar:  shapemap-2017.ebnf

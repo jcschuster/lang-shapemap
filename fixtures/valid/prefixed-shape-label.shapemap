@@ -1,0 +1,6 @@
+# Hand-written. Deviation D2: ATPNAME_LN and ATPNAME_NS, a prefixed name with a non-empty
+# prefix directly after '@' in shapeLabel [7]; the published grammar has both only in HTML
+# comments.
+<http://data.example/n1>@ex:S,
+<http://data.example/n2>@ex:,
+ex:n3@ex:S

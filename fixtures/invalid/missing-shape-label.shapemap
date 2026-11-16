@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: a nodeSelector without a shapeLabel; shapeAssociation [2] needs both.
+# shex.js: rejects
+<http://data.example/n>

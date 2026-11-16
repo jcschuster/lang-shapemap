@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: a node selector of an IRI followed by a string (shex.js extension: query in the language the IRI names).
+# shex.js: accepts
+<http://example.org/query-language> "query"@<http://schema.example/S>

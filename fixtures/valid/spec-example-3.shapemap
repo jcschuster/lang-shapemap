@@ -1,0 +1,12 @@
+# ShapeMap Structure and Language, Draft Community Group Report 13 July 2017,
+# https://shex.io/shape-map/ (sha256 1592134306e2c53e2fd5d6edb8af328c39006a78db8a0427227dd9f251704437),
+# section 5, Example 3, transcribed. Spec example. Parses only with the deviation that
+# makes `a` a predicate.
+# Validate a simple nodeSelector/shapeLabel pair.
+<http://data.example/#n1> @ <http://data.example/#S2>,
+# Validate a literal as S3.
+"chat"@en-fr@<http://...S3>,
+# validate everything with type Some/Type as the START shape.
+{FOCUS a <http://schema.example/Some/Type>}@START,
+# Validate all objects of p3.
+{_ <http://...p3> FOCUS}@START

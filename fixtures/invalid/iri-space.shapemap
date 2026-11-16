@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: a space in an IRIREF [18t].
+# shex.js: rejects
+<http://data.example/a b>@<http://schema.example/S>

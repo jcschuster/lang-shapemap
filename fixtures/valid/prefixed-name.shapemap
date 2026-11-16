@@ -1,0 +1,28 @@
+# Hand-written. Deviation D2: prefixed names as iri [136s], PNAME_NS and PNAME_LN, written
+# from the PN_* terminals [164s]-[173s]: empty and dotted prefixes, local names that start
+# with a digit, `:` or `_`, contain `.` `-` `:`, PERCENT and every PN_LOCAL_ESC, non-ASCII
+# PN_CHARS_BASE and PN_CHARS; names that start like the keywords `a`, `true` and `false`.
+ex:n@<http://schema.example/S>,
+:n@ :S,
+ex:@ ex:,
+:@ :,
+ex.a-1_b·c:n@<http://schema.example/S>,
+ex:1n@<http://schema.example/S>,
+ex:123@<http://schema.example/S>,
+ex::n@<http://schema.example/S>,
+ex:_n@<http://schema.example/S>,
+ex:a.b-c:d@<http://schema.example/S>,
+ex:a%20b%7e@<http://schema.example/S>,
+ex:\_\~\.\-\!\$\&\'\(\)\*\+\,\;\=\/\?\#\@\%@<http://schema.example/S>,
+é:ü@<http://schema.example/S>,
+ex:Ωμέγα@<http://schema.example/S>,
+ex:日本語@<http://schema.example/S>,
+ex:𐀀@<http://schema.example/S>,
+ex:a·b̀‿c@<http://schema.example/S>,
+a:b@<http://schema.example/S>,
+true:x@<http://schema.example/S>,
+false:x@<http://schema.example/S>,
+"x"^^xsd:string@<http://schema.example/S>,
+{FOCUS ex:p ex:o}@ ex:S,
+{FOCUS a:b _}@ ex:S,
+{ex:s ex:p FOCUS}@ ex:S
