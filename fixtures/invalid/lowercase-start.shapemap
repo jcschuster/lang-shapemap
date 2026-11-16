@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: `@start` in lower case; AT_START [17] is "@START" and the grammar states no case-insensitivity.
+# shex.js: accepts
+<http://data.example/n>@start

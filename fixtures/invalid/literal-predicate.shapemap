@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: a literal as the predicate of a triplePattern [6].
+# shex.js: rejects
+{FOCUS "p" _}@<http://schema.example/S>

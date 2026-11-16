@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: a node selector of an upper-case name followed by a string (shex.js extension, like SPARQL "…").
+# shex.js: accepts
+XPATH "//node"@<http://schema.example/S>

@@ -1,0 +1,31 @@
+# IRIs and literals as node selector
+
+<n>@<S>, ex:n@<S>, "x"@<S>, "x"@en@<S>, "x"^^<dt>@<S>, 1@<S>, true@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(PrefixedName(PnameLn))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral2))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(LangString(LangStringLiteral2))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral2),Iri(Iriref))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(NumericLiteral(Integer)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(BooleanLiteral),ShapeLabel(Iri(Iriref))))
+
+# FOCUS as subject, with an IRI, a literal or the wildcard as object
+
+{FOCUS <p> <o>}@<S>, {FOCUS <p> "o"}@<S>, {FOCUS <p> 1.5}@<S>, {FOCUS <p> false}@<S>, {FOCUS <p> _}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(Iri(Iriref)),Iri(Iriref),"}")),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(Iri(Iriref)),RdfLiteral(String(StringLiteral2)),"}")),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(Iri(Iriref)),NumericLiteral(Decimal),"}")),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(Iri(Iriref)),BooleanLiteral,"}")),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(Iri(Iriref)),_,"}")),ShapeLabel(Iri(Iriref))))
+
+# FOCUS as object, with an IRI or the wildcard as subject
+
+{<s> <p> FOCUS}@<S>, {_ ex:p FOCUS}@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",Iri(Iriref),Predicate(Iri(Iriref)),FOCUS,"}")),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(TriplePattern("{",_,Predicate(Iri(PrefixedName(PnameLn))),FOCUS,"}")),ShapeLabel(Iri(Iriref))))
+
+# A triple pattern without whitespace
+
+{FOCUS<p>_}@START
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(TriplePattern("{",FOCUS,Predicate(Iri(Iriref)),_,"}")),ShapeLabel(AtStart)))

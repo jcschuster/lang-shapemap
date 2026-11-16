@@ -1,0 +1,49 @@
+# The four string forms
+
+'a'@<S>, "a"@<S>, '''a
+'b' ''c'''@<S>, """a
+"b" ""c"""@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral1))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral2))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteralLong1))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteralLong2))),ShapeLabel(Iri(Iriref))))
+
+# Escapes in strings
+
+"\t\b\n\r\f\"\'\\ \u00E9 \U0001F600"@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral2))),ShapeLabel(Iri(Iriref))))
+
+# Datatypes
+
+"1"^^<http://www.w3.org/2001/XMLSchema#integer>@<S>, '1' ^^ xsd:integer @<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral2),Iri(Iriref))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral1),Iri(PrefixedName(PnameLn)))),ShapeLabel(Iri(Iriref))))
+
+# The four language-tagged string forms
+
+'a'@en@<S>, "a"@en-GB@<S>, '''a'''@de-CH-1996@<S>, """a"""@x-a1@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(RdfLiteral(LangString(LangStringLiteral1))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(LangString(LangStringLiteral2))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(LangString(LangStringLiteralLong1))),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(LangString(LangStringLiteralLong2))),ShapeLabel(Iri(Iriref))))
+
+# Numbers
+
+0@<S>, -1@<S>, +1@<S>, 1.5@<S>, .5@<S>, -.5@<S>, 1e3@<S>, 1.E-3@<S>, .5e+3@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(NumericLiteral(Integer)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(NumericLiteral(Integer)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(NumericLiteral(Integer)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(NumericLiteral(Decimal)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(NumericLiteral(Decimal)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(NumericLiteral(Decimal)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(NumericLiteral(Double)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(NumericLiteral(Double)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(NumericLiteral(Double)),ShapeLabel(Iri(Iriref))))
+
+# Booleans
+
+true@<S>, false@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(BooleanLiteral),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(BooleanLiteral),ShapeLabel(Iri(Iriref))))

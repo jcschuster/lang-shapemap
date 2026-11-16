@@ -1,0 +1,23 @@
+# '@' and an IRI, with and without whitespace
+
+<n>@<S>, <n> @ <S>, <n>@ ex:S, <n>@:S
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(PrefixedName(PnameLn)))),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(AtpnameLn)))
+
+# '@' and START, and AT_START
+
+<n>@ START, <n> @ START, <n>@START, <n> @START
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(START)),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(START)),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(AtStart)),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(AtStart)))
+
+# ATPNAME_LN and ATPNAME_NS (deviation D2)
+
+<n>@ex:S, <n>@ex:, <n>@:
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(AtpnameLn)),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(AtpnameNs)),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(AtpnameNs)))

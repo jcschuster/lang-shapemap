@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: reason `/` string (commented out of the 2017 grammar as [9]; shex.js extension).
+# shex.js: accepts
+<http://data.example/n>@<http://schema.example/S>/"why"

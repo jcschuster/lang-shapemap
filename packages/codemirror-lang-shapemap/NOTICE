@@ -1,0 +1,34 @@
+lang-shapemap is licensed under the MIT licence in LICENSE. Its grammar is derived from a
+specification that licence does not cover:
+
+    ShapeMap Structure and Language, Draft Community Group Report 13 July 2017,
+    https://shex.io/shape-map-20170713/
+    Copyright © 2017 the Contributors to the ShapeMap Structure and Language
+    Specification, published by the Shape Expressions Community Group under the W3C
+    Community Contributor License Agreement (CLA).
+
+This is the attribution that section 2.2 of the CLA requires of derivative works.
+spec/shapemap-2017.ebnf is extracted from its section 6; spec/deviations.ebnf has rows
+that the page carries in HTML comments, and productions of its editor's draft
+(https://shexspec.github.io/shape-map/, shexSpec/shape-map d02943b5, under the same
+agreement); gen/ebnf2lezer.mjs generates shapemap.grammar, and from it the parser, from
+both files. fixtures/valid/spec-example-3.shapemap and
+fixtures/invalid/spec-example-2.shapemap are the report's Examples 3 and 2.
+
+The rows that the report restates from RDF 1.1 Turtle and SPARQL 1.1 are covered by the
+W3C Document License:
+
+    Copyright © 2008-2014 W3C® (MIT, ERCIM, Keio, Beihang). This software or document
+    includes material copied from or derived from RDF 1.1 Turtle, W3C Recommendation
+    25 February 2014, https://www.w3.org/TR/turtle/.
+
+    Copyright © 2013 W3C® (MIT, ERCIM, Keio, Beihang). This software or document
+    includes material copied from or derived from SPARQL 1.1 Query Language, W3C
+    Recommendation 21 March 2013, https://www.w3.org/TR/sparql11-query/.
+
+The rudof-*.shapemap files in fixtures/ are example maps of rudof
+(https://github.com/rudof-project/rudof), dual-licensed MIT OR Apache-2.0, used here under
+the MIT licence: Copyright (c) 2023 Jose Emilio Labra Gayo. Its text is in
+fixtures/rudof-LICENSE-MIT. They are not part of the npm package.
+
+spec/SOURCE records the report. See https://shex.io.

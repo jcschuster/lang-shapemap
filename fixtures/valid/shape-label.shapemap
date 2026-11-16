@@ -1,0 +1,8 @@
+# Hand-written. Every form of shapeLabel [7]: '@' iri, '@' "START" and AT_START [17],
+# with and without whitespace around '@'.
+<http://data.example/n1>@<http://schema.example/S>,
+<http://data.example/n2> @ <http://schema.example/S>,
+<http://data.example/n3>@ START,
+<http://data.example/n4> @ START,
+<http://data.example/n5>@START,
+<http://data.example/n6> @START

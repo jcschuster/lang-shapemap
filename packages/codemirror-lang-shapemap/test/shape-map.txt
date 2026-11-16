@@ -1,0 +1,41 @@
+# One association
+
+<http://data.example/n>@<http://schema.example/S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))))
+
+# Associations separated by commas
+
+<n1>@<S>, <n2>@<S>,<n3>@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))))
+
+# Whitespace and comments between all tokens
+
+# leading
+<n> # a
+@ # b
+<S> # c
+, # d
+{ # e
+FOCUS # f
+<p> # g
+_ # h
+} # i
+@START # end
+
+==>
+
+ShapeMap(LineComment,ShapeAssociation(NodeSelector(Iri(Iriref)),LineComment,ShapeLabel(LineComment,Iri(Iriref))),LineComment,LineComment,ShapeAssociation(NodeSelector(TriplePattern("{",LineComment,FOCUS,LineComment,Predicate(Iri(Iriref)),LineComment,_,LineComment,"}")),LineComment,ShapeLabel(AtStart)),LineComment)
+
+# A hash inside an IRI or a string is no comment
+
+<http://a.example/#n>@<#S>, "#x"@<S>
+
+==>
+
+ShapeMap(ShapeAssociation(NodeSelector(Iri(Iriref)),ShapeLabel(Iri(Iriref))),ShapeAssociation(NodeSelector(RdfLiteral(String(StringLiteral2))),ShapeLabel(Iri(Iriref))))

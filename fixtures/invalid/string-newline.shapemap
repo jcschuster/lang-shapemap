@@ -1,0 +1,5 @@
+# Hand-written.
+# invalid: a line break in STRING_LITERAL2 [157s]; only the long forms may span lines.
+# shex.js: rejects
+"a
+b"@<http://schema.example/S>

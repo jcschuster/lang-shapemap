@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: a prefixed name ending in `.`; PN_LOCAL [169s] cannot end in `.`.
+# shex.js: accepts
+ex:n.@<http://schema.example/S>

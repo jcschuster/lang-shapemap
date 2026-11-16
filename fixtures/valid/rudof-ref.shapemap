@@ -1,0 +1,9 @@
+# rudof examples/shex/ref.sm (identical: examples/shex/triple_ref.sm), commit 5e361daf3f7d30b31f0d545a179a67976f95541b.
+# Copyright (c) 2023 Jose Emilio Labra Gayo; used under the MIT licence, see fixtures/rudof-LICENSE-MIT.
+:ok1@:S,
+:ok1@:T,
+:ko1@:S,
+:ko2@:S,
+:ko3@:S
+#1@:U,
+#3@:U

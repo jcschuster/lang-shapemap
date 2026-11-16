@@ -1,0 +1,28 @@
+// Hand-written part of src/shapemap.grammar. gen/ebnf2lezer.mjs adds a rule per production
+// and a token per terminal of the grammar in spec/. A rule here named like a production must
+// repeat the generated body and only adds a @top, props or conflict markers. The lines
+// starting with @hidden and @unused are read by the generator, not by Lezer.
+// gen/CONFLICTS.md explains each entry.
+
+@top ShapeMap { ShapeAssociation ("," ShapeAssociation)* }
+
+// Productions that pass one child through.
+@hidden subjectTerm objectTerm literal
+
+// Defined in the specification, used by no production (spec/README.md, discrepancy 3): a
+// token that no rule accepts, so that "_:b" is an error.
+@unused BLANK_NODE_LABEL
+
+@skip { whitespace | LineComment }
+
+@tokens {
+  // The longer match first: no state reads BlankNodeLabel, so Lezer does not ask for it.
+  @precedence { BlankNodeLabel, "_" }
+
+  // Named, so that they are nodes of the tree and can be highlighted.
+  "{" "}" "_" "FOCUS" "START"
+}
+
+@external propSource shapemapHighlighting from "./highlight"
+
+@detectDelim

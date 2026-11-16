@@ -1,0 +1,5 @@
+# Hand-written.
+# invalid: a PREFIX declaration; a ShapeMap takes its prefixes from the schema and the data.
+# shex.js: rejects
+PREFIX ex: <http://data.example/>
+ex:n@ex:S

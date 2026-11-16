@@ -1,0 +1,21 @@
+# Hand-written. triplePattern [6]: FOCUS as subject with an IRI, a literal or `_` as object,
+# FOCUS as object with an IRI or `_` as subject, with and without whitespace.
+{FOCUS <http://schema.example/p> <http://data.example/o>}@<http://schema.example/S>,
+{FOCUS <http://schema.example/p> "o"}@<http://schema.example/S>,
+{FOCUS <http://schema.example/p> "o"@en}@<http://schema.example/S>,
+{FOCUS <http://schema.example/p> "o"^^<http://schema.example/dt>}@<http://schema.example/S>,
+{FOCUS <http://schema.example/p> 1}@<http://schema.example/S>,
+{FOCUS <http://schema.example/p> -1.5e3}@<http://schema.example/S>,
+{FOCUS <http://schema.example/p> false}@<http://schema.example/S>,
+{FOCUS <http://schema.example/p> _}@<http://schema.example/S>,
+{<http://data.example/s> <http://schema.example/p> FOCUS}@<http://schema.example/S>,
+{_ <http://schema.example/p> FOCUS}@START,
+{FOCUS<http://schema.example/p>_}@START,
+{_<http://schema.example/p>FOCUS}@START,
+{
+  FOCUS
+  <http://schema.example/p>
+  _
+}
+@
+START

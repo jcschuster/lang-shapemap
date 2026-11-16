@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: `\q` is no ECHAR [160s].
+# shex.js: rejects
+"a\qb"@<http://schema.example/S>

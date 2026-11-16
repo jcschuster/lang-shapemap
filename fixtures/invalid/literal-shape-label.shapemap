@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: a literal as shapeLabel; shapeLabel [7] is an iri or START.
+# shex.js: rejects
+<http://data.example/n>@"S"

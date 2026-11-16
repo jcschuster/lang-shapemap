@@ -1,0 +1,14 @@
+# rudof examples/shex/sparql_query_shapemap.sm, commit 5e361daf3f7d30b31f0d545a179a67976f95541b.
+# Copyright (c) 2023 Jose Emilio Labra Gayo; used under the MIT licence, see fixtures/rudof-LICENSE-MIT.
+# invalid: SPARQL "…" node selectors are a shex.js and rudof extension.
+# shex.js: accepts
+SPARQL """
+  PREFIX : <http://example.org/>
+
+select ?x where {
+    ?x a :Person ;
+       :age ?age .
+    FILTER (?age > 18)
+}
+
+"""@:Person

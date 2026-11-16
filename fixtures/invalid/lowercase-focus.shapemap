@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: `focus` in lower case; the grammar writes "FOCUS" and states no case-insensitivity.
+# shex.js: accepts
+{focus <http://schema.example/p> _}@<http://schema.example/S>

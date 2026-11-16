@@ -1,0 +1,5 @@
+# Hand-written.
+# invalid: two shapeAssociations without the comma between them.
+# shex.js: rejects
+<http://data.example/n1>@<http://schema.example/S>
+<http://data.example/n2>@<http://schema.example/S>

@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: whitespace between a string and its LANGTAG; LANG_STRING_LITERAL2 [74x] is a single terminal.
+# shex.js: accepts
+"chat" @en@<http://schema.example/S>

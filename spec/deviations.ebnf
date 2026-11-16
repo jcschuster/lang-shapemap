@@ -1,0 +1,20 @@
+# Hand-written. Each production replaces the extracted one of its name, or adds one; the
+# comment above it gives its item in spec/README.md ("Deviations"). Notation: spec/README.md.
+
+# D1, decided by Johannes 2026-11-16: `a` (rdf:type) as predicate and no longer as subject
+# term, as in the editor's draft (shexSpec/shape-map d02943b5); Example 3 needs it.
+[4] subjectTerm ::= iri
+[6] triplePattern ::= '{' "FOCUS" predicate (objectTerm | '_') '}'
+    | '{' (subjectTerm | '_') predicate "FOCUS" '}'
+[] predicate ::= iri | RDF_TYPE
+[] <RDF_TYPE> ::= "a"
+
+# D2, decided by Johannes 2026-11-16: prefixed names, also directly after '@', with the
+# rows that the published page has in HTML comments.
+[7] shapeLabel ::= '@' (iri | "START") | AT_START | ATPNAME_NS | ATPNAME_LN
+[136s] iri ::= IRIREF | prefixedName
+[137s] prefixedName ::= PNAME_LN | PNAME_NS
+[140s] <PNAME_NS> ::= PN_PREFIX? ":"
+[141s] <PNAME_LN> ::= PNAME_NS PN_LOCAL
+[70] <ATPNAME_NS> ::= "@" PN_PREFIX? ":"
+[71] <ATPNAME_LN> ::= "@" PNAME_NS PN_LOCAL

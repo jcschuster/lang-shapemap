@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: a triplePattern [6] without FOCUS.
+# shex.js: rejects
+{<http://data.example/s> <http://schema.example/p> _}@<http://schema.example/S>

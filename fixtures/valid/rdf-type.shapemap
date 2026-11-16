@@ -1,0 +1,7 @@
+# Hand-written. Deviation D1: `a` as the predicate of a triplePattern [6], for rdf:type, as in
+# the editor's draft and the spec's own Example 3 (the 2017 grammar allows only iri there).
+{FOCUS a <http://schema.example/T>}@<http://schema.example/S>,
+{FOCUS a _}@<http://schema.example/S>,
+{<http://data.example/s> a FOCUS}@<http://schema.example/S>,
+{_ a FOCUS}@START,
+{FOCUS a"o"}@START

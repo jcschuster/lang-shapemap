@@ -1,0 +1,4 @@
+# Hand-written.
+# invalid: `a` as subjectTerm [4]. The 2017 grammar allows it; deviation D1 moves `a` to the predicate as the editor's draft does.
+# shex.js: rejects
+a@<http://schema.example/S>

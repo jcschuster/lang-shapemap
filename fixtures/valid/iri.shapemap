@@ -1,0 +1,10 @@
+# Hand-written. iri [136s] as IRIREF [18t]: absolute and relative IRIs, the empty IRI, the
+# punctuation IRIREF admits, non-ASCII characters, and UCHAR [26t] escapes in both lengths.
+<http://data.example/n>@<http://schema.example/S>,
+<>@<>,
+<#n>@<#S>,
+<../n?q=1&r=2>@<S>,
+<urn:ex:n>@<urn:ex:S>,
+<http://data.example/a!$&'()*+,;=:/?@[]~%20.-_n>@<http://schema.example/S>,
+<http://例え.jp/ü>@<http://schema.example/Ω>,
+<http://data.example/\u00E9>@<http://schema.example/\U0001F600>
