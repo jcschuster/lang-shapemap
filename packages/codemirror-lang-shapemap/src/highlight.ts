@@ -20,4 +20,6 @@ export const shapemapHighlighting: NodePropSource = styleTags({
   BooleanLiteral: t.bool,
   LineComment: t.lineComment,
   "{ }": t.brace,
+  "^^": t.operator,
+  ",": t.separator,
 })

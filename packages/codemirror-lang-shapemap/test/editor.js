@@ -1,6 +1,8 @@
 import {shapemap} from "../dist/index.js"
 import {EditorState} from "@codemirror/state"
 import {CompletionContext} from "@codemirror/autocomplete"
+import {syntaxTree} from "@codemirror/language"
+import {NodeProp} from "@lezer/common"
 import assert from "assert"
 
 const state = doc => EditorState.create({doc, extensions: [shapemap()]})
@@ -57,5 +59,18 @@ describe("language data", () => {
     const s = state("")
     assert.deepStrictEqual(s.languageDataAt("commentTokens", 0), [{line: "#"}])
     assert.deepStrictEqual(s.languageDataAt("closeBrackets", 0), [{brackets: ["(", "[", "{", '"', "'"]}])
+  })
+})
+
+describe("brackets", () => {
+  it("marks each opening brace and its closing sibling as partners", () => {
+    const pairs = []
+    syntaxTree(state("{FOCUS a _}@<S>, {_ a FOCUS}@<T>")).iterate({enter: node => {
+      const close = node.type.prop(NodeProp.closedBy)
+      if (!close) return
+      const partner = node.node.parent.getChild(close[0])
+      pairs.push(node.name + partner.name + partner.type.prop(NodeProp.openedBy))
+    }})
+    assert.deepStrictEqual(pairs, ["{}{", "{}{"])
   })
 })

@@ -42,6 +42,8 @@ describe("highlighting", () => {
     {tag: t.bool, class: "bool"},
     {tag: t.lineComment, class: "comment"},
     {tag: t.brace, class: "brace"},
+    {tag: t.operator, class: "operator"},
+    {tag: t.separator, class: "separator"},
   ])
 
   function classes(text) {
@@ -59,11 +61,11 @@ describe("highlighting", () => {
     ].join("\n")
     assert.deepStrictEqual(classes(text), [
       ["# c", "comment"],
-      ["<n>", "iri"], ["@<S>", "shape"], ["ex:n", "iri"], ["@ ex:S", "shape"], [":n", "iri"], ["@:S", "shape"], ["ex:", "prefix"], ["@ex:", "shape"],
-      ["{", "brace"], ["FOCUS", "keyword"], ["ex:p", "predicate"], ["_", "wildcard"], ["}", "brace"], ["@START", "start"],
-      ["{", "brace"], ["_", "wildcard"], ["a", "keyword"], ["FOCUS", "keyword"], ["}", "brace"], ["@ ", "shape"], ["START", "start"],
-      ["'s'", "string"], ["@<S>", "shape"], ['"l"@en', "string"], ["@<S>", "shape"], ['"t"', "string"], ["xsd:string", "datatype"], ["@<S>", "shape"],
-      ["1", "integer"], ["@<S>", "shape"], ["1.5", "float"], ["@<S>", "shape"], ["1e3", "float"], ["@<S>", "shape"], ["true", "bool"], ["@<S>", "shape"],
+      ["<n>", "iri"], ["@<S>", "shape"], [",", "separator"], ["ex:n", "iri"], ["@ ex:S", "shape"], [",", "separator"], [":n", "iri"], ["@:S", "shape"], [",", "separator"], ["ex:", "prefix"], ["@ex:", "shape"], [",", "separator"],
+      ["{", "brace"], ["FOCUS", "keyword"], ["ex:p", "predicate"], ["_", "wildcard"], ["}", "brace"], ["@START", "start"], [",", "separator"],
+      ["{", "brace"], ["_", "wildcard"], ["a", "keyword"], ["FOCUS", "keyword"], ["}", "brace"], ["@ ", "shape"], ["START", "start"], [",", "separator"],
+      ["'s'", "string"], ["@<S>", "shape"], [",", "separator"], ['"l"@en', "string"], ["@<S>", "shape"], [",", "separator"], ['"t"', "string"], ["^^", "operator"], ["xsd:string", "datatype"], ["@<S>", "shape"], [",", "separator"],
+      ["1", "integer"], ["@<S>", "shape"], [",", "separator"], ["1.5", "float"], ["@<S>", "shape"], [",", "separator"], ["1e3", "float"], ["@<S>", "shape"], [",", "separator"], ["true", "bool"], ["@<S>", "shape"],
     ])
   })
 

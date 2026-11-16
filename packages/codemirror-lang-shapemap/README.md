@@ -18,7 +18,7 @@ new EditorView({extensions: [basicSetup, shapemap()]})
 Nodes are named after the productions of the report (`ShapeMap`, `ShapeAssociation`,
 `NodeSelector`, `TriplePattern`, `ShapeLabel`, `Predicate`, `RdfLiteral`, ...) and tokens
 after its terminals (`Iriref`, `PnameLn`, `AtStart`, `LangStringLiteral2`, ...); `FOCUS`,
-`START`, `_`, `{` and `}` are tokens named by their text. Comments are `LineComment`. IRI,
+`START`, `_`, `{`, `}`, `^^` and `,` are tokens named by their text. Comments are `LineComment`. IRI,
 prefixed-name and literal nodes have the same names and highlighting as in
 [codemirror-lang-shex](https://github.com/jcschuster/lang-shex), with one difference in
 structure: the datatype after `^^` is the `Iri` child of `RdfLiteral` here, where
