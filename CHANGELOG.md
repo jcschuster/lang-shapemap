@@ -10,6 +10,14 @@ The ShapeMap report the grammar is generated from is recorded in `package.json` 
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-16
+
+### Added
+
+- Tokens `"^^"` and `","` in the tree, highlighted as an operator and a separator.
+- `closedBy`/`openedBy` on `{` and `}`, so that bracket matching follows the tree instead of
+  scanning the text.
+
 ## [0.1.1] - 2026-11-16
 
 ## Changed

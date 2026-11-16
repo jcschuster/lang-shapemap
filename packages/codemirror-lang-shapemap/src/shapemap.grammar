@@ -10,8 +10,6 @@
 
 @external propSource shapemapHighlighting from "./highlight"
 
-@detectDelim
-
 // One rule per production, in the order of the grammar.
 
 @top ShapeMap {
@@ -176,7 +174,8 @@ PrefixedName {
   @precedence { BlankNodeLabel, "_" }
 
   // Named, so that they are nodes of the tree and can be highlighted.
-  "{" "}" "_" "FOCUS" "START"
+  // @detectDelim would mark none: TriplePattern has two alternatives.
+  "{"[closedBy="}"] "}"[openedBy="{"] "_" "FOCUS" "START" "^^" ","
 
   // The longer match first (gen/CONFLICTS.md).
   @precedence { AtpnameLn, "@" }

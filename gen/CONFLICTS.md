@@ -46,8 +46,8 @@ entry (`spec/README.md`, discrepancy 7), and `@ex:S` is `ATPNAME_LN`, never a la
   left out.
 - `@skip { whitespace | LineComment }`, naming the two alternatives of `PASSED TOKENS`.
 - `@precedence { BlankNodeLabel, "_" }` (above).
-- The tokens `{ } _ FOCUS START`, declared in `@tokens` so that they are nodes of the tree
-  and can be highlighted: no node around them tells them apart. `@`, `,`, `^^`, `true` and
-  `false` are no nodes, as in lang-shex: `ShapeLabel`, `RdfLiteral` and `BooleanLiteral`
-  carry them.
-- The highlighting prop source (`src/highlight.ts`) and `@detectDelim`.
+- The tokens `{ } _ FOCUS START ^^ ,`, declared in `@tokens` so that they are nodes of the
+  tree and can be highlighted: no node around them tells them apart; the braces marked with
+  each other (`closedBy`, `openedBy`) for bracket matching. `@`, `true` and `false` are no
+  nodes: `ShapeLabel` and `BooleanLiteral` carry them.
+- The highlighting prop source (`src/highlight.ts`).
